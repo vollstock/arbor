@@ -36,7 +36,7 @@
         var params = pSystem.parameters()
                 
         if(USE_WORKER){
-          trace('arbor.js/web-workers',params)
+          // trace('arbor.js/web-workers',params)
           _screenInterval = setInterval(that.screenUpdate, params.timeout)
 
           _physics = new Worker(arbor_path()+'physics/worker.js')

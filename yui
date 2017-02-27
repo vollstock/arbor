@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar /Users/vollstock/Documents/Programmieren/arbor/.yui/yuicompressor-2.4.6.jar $@

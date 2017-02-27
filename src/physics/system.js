@@ -587,7 +587,8 @@
     Object.defineProperty(Node.prototype, "p", {
       get: function() { 
         var self = this
-        var roboPoint = {}
+        var roboPoint = Object.create(Point.prototype)
+
         Object.defineProperty(roboPoint, 'x', { 
           get: function(){ return self._p.x; },
           set: function(newX){ state.kernel.particleModified(self._id, {x:newX}) }
@@ -596,7 +597,6 @@
           get: function(){ return self._p.y; },
           set: function(newY){ state.kernel.particleModified(self._id, {y:newY}) }
         })
-        roboPoint.__proto__ = Point.prototype
         return roboPoint
       },
       set: function(newP) { 
